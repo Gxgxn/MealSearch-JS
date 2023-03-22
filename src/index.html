@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/dist/output.css" rel="stylesheet" />
+    <title>Document</title>
+  </head>
+  <body class="bg-gray-800">
+    <section class="container mx-auto min-h-screen px-4">
+      <main>
+        <form
+          action="#"
+          class="flex items-center justify-center py-9 search-input"
+        >
+          <label
+            for="Search"
+            class="relative block w-full overflow-hidden border-b border-gray-200 pt-3 focus-within:border-blue-600 md:w-[40%]"
+          >
+            <input
+              type="search"
+              id="search"
+              placeholder="Search for a meal..."
+              class="peer h-8 w-full border-none bg-transparent p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm text-gray-100"
+            />
+
+            <span
+              class="absolute left-0 top-2 -translate-y-1/2 text-xs text-gray-100 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-xs"
+            >
+              Search For a Meal..<span
+                class="absolute bottom-0 -right-5 peer-placeholder-shown:text-sm"
+                ><svg
+                  fill="currentColor"
+                  viewBox="0 0 512 512"
+                  class="w-4 h-4 dark:text-gray-100"
+                >
+                  <path
+                    d="M479.6,399.716l-81.084-81.084-62.368-25.767A175.014,175.014,0,0,0,368,192c0-97.047-78.953-176-176-176S16,94.953,16,192,94.953,368,192,368a175.034,175.034,0,0,0,101.619-32.377l25.7,62.2L400.4,478.911a56,56,0,1,0,79.2-79.195ZM48,192c0-79.4,64.6-144,144-144s144,64.6,144,144S271.4,336,192,336,48,271.4,48,192ZM456.971,456.284a24.028,24.028,0,0,1-33.942,0l-76.572-76.572-23.894-57.835L380.4,345.771l76.573,76.572A24.028,24.028,0,0,1,456.971,456.284Z"
+                  ></path></svg
+              ></span>
+            </span>
+          </label>
+        </form>
+
+        <div class="card w-[80%] mx-auto md:w-[40%] hidden" id="card">
+          <div
+            class="rounded-2xl bg-gradient-to-br from-indigo-500 via-indigo-800 to-blue-700 p-1 shadow-xl relative"
+          >
+            <div
+              class="block rounded-xl bg-gray-800 bg-opacity-90 p-4 sm:p-6 lg:p-8"
+            >
+              <div class="mt-2">
+                <div class="card-img max-w-[300px] mx-auto">
+                  <img src="" alt="" class="w-full" />
+                </div>
+
+                <h3
+                  class="text-lg font-bold text-gray-100 sm:text-xl card-title"
+                ></h3>
+                <!-- meal tags -->
+                <div class="mt-2 text-sm text-gray-500 tags space-x-2"></div>
+
+                <a
+                  class="showIns group relative inline-block text-sm font-medium text-indigo-600 focus:outline-none focus:ring active:text-indigo-500 mt-4"
+                  href="#"
+                >
+                  <span
+                    class="absolute inset-0 translate-x-0.5 translate-y-0.5 bg-indigo-600 transition-transform group-hover:translate-y-0 group-hover:translate-x-0 rounded-lg"
+                  ></span>
+
+                  <span
+                    class="relative block border border-current bg-slate-400 px-4 py-2 rounded-lg"
+                  >
+                    Get instructions
+                  </span>
+                </a>
+
+                <a
+                  class="showIns group relative inline-block text-sm font-medium text-indigo-600 focus:outline-none focus:ring active:text-indigo-500 mt-4"
+                  href="#"
+                >
+                  <span
+                    class="absolute inset-0 translate-x-0.5 translate-y-0.5 bg-indigo-600 transition-transform group-hover:translate-y-0 group-hover:translate-x-0 rounded-lg"
+                  ></span>
+
+                  <span
+                    class="relative block border border-current bg-slate-400 px-4 py-2 rounded-lg"
+                    id="ing"
+                  >
+                    What Do I Need?
+                  </span>
+                </a>
+              </div>
+            </div>
+
+            <div
+              class="recipe absolute inset-0 bg-gray-700 backdrop-blur-md bg-opacity-90 rounded-xl overflow-auto hidden"
+            >
+              <button
+                type="button"
+                class="p-[10px] px-4 showIns bg-indigo-600 text-white ml-1 mt-1 rounded-full"
+              >
+                X
+              </button>
+              <pre
+                class="text-white rounded-lg p-2 text-lg whitespace-pre-wrap"
+              ></pre>
+            </div>
+          </div>
+        </div>
+      </main>
+      <script src="./script.js"></script>
+    </section>
+  </body>
+</html>
