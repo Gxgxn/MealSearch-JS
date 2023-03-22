@@ -61,7 +61,11 @@ searchform.addEventListener("submit", async (e) => {
       console.log("clicked");
       recipe.lastElementChild.innerHTML =
         e.target.id === "ing" ? `<ul>${arr.join("")}</ul>` : strInstructions;
-      recipe.classList.toggle("hidden");
+      if (e.target.id === "close") {
+        recipe.classList.add("hidden");
+        return;
+      }
+      recipe.classList.remove("hidden");
     })
   );
   document.querySelector("#card").classList.remove("hidden");
