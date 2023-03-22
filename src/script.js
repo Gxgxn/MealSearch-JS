@@ -9,6 +9,9 @@ const url = "https://www.themealdb.com/api/json/v1/1/search.php?s=";
 
 searchform.addEventListener("submit", async (e) => {
   e.preventDefault();
+  showRecipe.forEach((ele) => {
+    ele.removeEventListener("click", canIdoThis);
+  });
   tags.innerHTML = "";
   recipe.lastElementChild.innerHTML = "";
   let inputVal = e.target.elements.search.value;
@@ -56,19 +59,21 @@ searchform.addEventListener("submit", async (e) => {
   }
 
   //show recipe and ingredients
-  showRecipe.forEach((e) =>
-    e.addEventListener("click", (e) => {
-      console.log("clicked");
-      recipe.lastElementChild.innerHTML =
-        e.target.id === "ing" ? `<ul>${arr.join("")}</ul>` : strInstructions;
-      if (e.target.id === "close") {
-        recipe.classList.add("hidden");
-        return;
-      }
-      recipe.classList.remove("hidden");
-    })
-  );
+
+  showRecipe.forEach((e) => {
+    e.addEventListener("click", canIdoThis);
+  });
   document.querySelector("#card").classList.remove("hidden");
+
+  function canIdoThis(e) {
+    recipe.lastElementChild.innerHTML =
+      e.target.id === "ing" ? `<ul>${arr.join("")}</ul>` : strInstructions;
+    if (e.target.id === "close") {
+      recipe.classList.add("hidden");
+      return;
+    }
+    recipe.classList.remove("hidden");
+  }
 });
 
 function useFetch(searchQuery) {
