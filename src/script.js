@@ -20,7 +20,11 @@ searchform.addEventListener("submit", async (e) => {
   await useFetch(inputVal).then((res) => {
     meal = res;
   });
-  console.log(meal);
+
+  if (!meal) {
+    alert("Not Found");
+    return;
+  }
   let {
     strArea,
     strCategory,
